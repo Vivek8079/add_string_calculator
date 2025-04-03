@@ -8,7 +8,11 @@ RSpec.describe StringCalculatorKata do
     end
 
     it "returns the number itself" do
-      expect(StringCalculatorKata.new("7").add).to eq(7)
+      expect(StringCalculatorKata.new("1").add).to eq(1)
+    end
+
+    it "returns the sum of two numbers" do
+      expect(StringCalculatorKata.new("1,1").add).to eq(2)
     end
   end
 end
