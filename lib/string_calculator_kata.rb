@@ -15,6 +15,10 @@ class StringCalculatorKata
 
     numbers = @input.split(delimiter).map(&:to_i)
 
+    negative_numbers = numbers.find_all(&:negative?)
+
+    raise "Negatives not allowed: #{negatives.join(', ')}" unless negative_numbers.blank?
+
     numbers.sum
   end
 
