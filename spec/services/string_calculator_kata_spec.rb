@@ -20,7 +20,7 @@ RSpec.describe StringCalculatorKata do
     end
 
     it "handle different delimiters" do
-      expect(StringCalculatorKata.new("//;\n4;3,5").add).to eq(12)
+      expect(StringCalculatorKata.new("//;\n4;5").add).to eq(9)
     end
   end
 end

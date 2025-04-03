@@ -5,6 +5,29 @@ class StringCalculatorKata
 
   def add
     return 0 if @input.empty?
-    @input.split(/,|\n/).map(&:to_i).sum
+
+    delimiter = /,|\n/
+
+    if @input.start_with?("//")
+      delimiter_section, @input = @input.split("\n", 2)
+      delimiter = extract_delimiters(delimiter_section)
+    end
+
+    numbers = @input.split(delimiter).map(&:to_i)
+
+    numbers.sum
+  end
+
+  private
+
+  def extract_delimiters(section)
+    regexp = section.match(/^\/\/(.+)/)
+    delimiters = regexp[1]
+
+    if delimiters.start_with?("[")
+      delimiters.scan(/\[([^\]]+)\]/).flatten.map { |d| Regexp.escape(d) }.join("|")
+    else
+      Regexp.escape(delimiters[0])
+    end
   end
 end
