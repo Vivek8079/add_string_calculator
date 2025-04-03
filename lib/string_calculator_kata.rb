@@ -5,6 +5,6 @@ class StringCalculatorKata
 
   def add
     return 0 if @input.empty?
-    @input.split(",").map(&:to_i).sum
+    @input.split(/,|\n/).map(&:to_i).sum
   end
 end
