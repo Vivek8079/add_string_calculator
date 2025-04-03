@@ -19,7 +19,7 @@ class StringCalculatorKata
 
     raise "Negatives not allowed: #{negative_numbers.join(', ')}" unless negative_numbers.blank?
 
-    numbers.sum
+    numbers.reject{ |number| number > 1000 }.sum
   end
 
   private
