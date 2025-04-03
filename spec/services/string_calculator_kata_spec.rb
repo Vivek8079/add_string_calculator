@@ -18,5 +18,9 @@ RSpec.describe StringCalculatorKata do
     it 'handle , and new line delimiters' do
       expect(StringCalculatorKata.new("1\n2,4").add).to eq(7)
     end
+
+    it "handle different delimiters" do
+      expect(StringCalculatorKata.new("//;\n4;3,5").add).to eq(12)
+    end
   end
 end
