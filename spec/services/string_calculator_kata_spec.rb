@@ -14,5 +14,9 @@ RSpec.describe StringCalculatorKata do
     it "returns the sum of two numbers" do
       expect(StringCalculatorKata.new("1,1").add).to eq(2)
     end
+
+    it "handle , and new line delimiters" do
+      expect(StringCalculatorKata.new("1\n2,4").add).to eq(7)
+    end
   end
 end
