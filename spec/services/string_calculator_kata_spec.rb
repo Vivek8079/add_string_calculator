@@ -6,5 +6,9 @@ RSpec.describe StringCalculatorKata do
     it "returns 0 for an empty string" do
       expect(StringCalculatorKata.new("").add).to eq(0)
     end
+
+    it "returns the number itself" do
+      expect(StringCalculatorKata.new("7").add).to eq(7)
+    end
   end
 end
