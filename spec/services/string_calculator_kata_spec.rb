@@ -22,5 +22,11 @@ RSpec.describe StringCalculatorKata do
     it "handle different delimiters" do
       expect(StringCalculatorKata.new("//;\n4;5").add).to eq(9)
     end
+
+    it "raises an error when negative numbers are present" do
+      expect { StringCalculatorKata.new("-2,3,-4,5").add }
+        .to raise_error("Negatives not allowed: -2, -4")
+    end
+
   end
 end
