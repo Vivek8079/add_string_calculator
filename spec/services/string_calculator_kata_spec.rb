@@ -28,5 +28,8 @@ RSpec.describe StringCalculatorKata do
         .to raise_error("Negatives not allowed: -2, -4")
     end
 
+    it "ignores numbers greater than 1000" do
+      expect(StringCalculatorKata.new("2,1001").add).to eq(2)
+    end
   end
 end

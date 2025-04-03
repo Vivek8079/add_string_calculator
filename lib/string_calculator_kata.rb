@@ -17,7 +17,7 @@ class StringCalculatorKata
 
     negative_numbers = numbers.find_all(&:negative?)
 
-    raise "Negatives not allowed: #{negatives.join(', ')}" unless negative_numbers.blank?
+    raise "Negatives not allowed: #{negative_numbers.join(', ')}" unless negative_numbers.blank?
 
     numbers.sum
   end
